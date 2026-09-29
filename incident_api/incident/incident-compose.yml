@@ -1,0 +1,16 @@
+services:
+  incident_db:
+    container_name: incident_container
+    image: postgres:18
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: incident_assistant
+      POSTGRES_PASSWORD: TROUBADOR!
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql
+
+volumes:
+  pgdata:
